@@ -4,10 +4,10 @@ import ActivityCard from '../../../../components/ActivityCard.astro';
 const base = import.meta.env.BASE_URL;
 const activities = [
   {number:'1',title:'Τι είναι ένας υπολογιστής;',description:'Καταλαβαίνω τι κάνει ένας υπολογιστής και ξεχωρίζω δεδομένα και πληροφορίες.',duration:'20΄',type:'Μάθημα + mini task',icon:'💻',href:`${base}taxeis/g/ypologistis/ti-einai-ypologistis/`},
-  {number:'2',title:'Υλικό και λογισμικό',description:'Ξεχωρίζω ό,τι μπορώ να αγγίξω από τα προγράμματα που χρησιμοποιώ.',duration:'25΄',type:'Ταξινόμηση',icon:'🧠',href:'#'},
-  {number:'3',title:'Περιφερειακές συσκευές',description:'Αναγνωρίζω συσκευές εισόδου, εξόδου και συσκευές που κάνουν και τα δύο.',duration:'25΄',type:'Interactive',icon:'⌨️',href:'#'},
-  {number:'4',title:'Πού αποθηκεύονται τα δεδομένα;',description:'Γνωρίζω βασικά αποθηκευτικά μέσα και συζητώ πού φυλάσσονται τα αρχεία μας.',duration:'20΄',type:'Explore',icon:'💾',href:'#'},
-  {number:'5',title:'Χρησιμοποιώ σωστά τον υπολογιστή',description:'Μαθαίνω βασικούς κανόνες εργονομίας και υπεύθυνης χρήσης στο εργαστήριο.',duration:'20΄',type:'Παρατήρηση + εφαρμογή',icon:'🪑',href:'#'}
+  {number:'2',title:'Υλικό και λογισμικό',description:'Ξεχωρίζω ό,τι μπορώ να αγγίξω από τα προγράμματα που χρησιμοποιώ.',duration:'25΄',type:'Ταξινόμηση',icon:'🧠',href:`${base}taxeis/g/ypologistis/yliko-logismiko/`},
+  {number:'3',title:'Περιφερειακές συσκευές',description:'Αναγνωρίζω συσκευές εισόδου, εξόδου και συσκευές που κάνουν και τα δύο.',duration:'25΄',type:'Interactive',icon:'⌨️',href:`${base}taxeis/g/ypologistis/perifereiakes-syskeves/`},
+  {number:'4',title:'Πού αποθηκεύονται τα δεδομένα;',description:'Γνωρίζω βασικά αποθηκευτικά μέσα και συζητώ πού φυλάσσονται τα αρχεία μας.',duration:'20΄',type:'Explore',icon:'💾',href:`${base}taxeis/g/ypologistis/apothikefsi-dedomenon/`},
+  {number:'5',title:'Χρησιμοποιώ σωστά τον υπολογιστή',description:'Μαθαίνω βασικούς κανόνες εργονομίας και υπεύθυνης χρήσης στο εργαστήριο.',duration:'20΄',type:'Παρατήρηση + εφαρμογή',icon:'🪑',href:`${base}taxeis/g/ypologistis/sosti-xrisi/`}
 ];
 ---
 <BaseLayout title="Γνωρίζω τον υπολογιστή | Γ΄ Δημοτικού">
@@ -46,13 +46,13 @@ const activities = [
 
   <section class="section section-soft">
     <h2>✅ Έλεγξε τι έμαθες</h2>
-    <p class="section-intro">Σύντομο επαναληπτικό quiz για όλη την ενότητα. Θα ενεργοποιηθεί όταν ολοκληρωθούν οι πέντε δραστηριότητες.</p>
-    <div class="card quiz-feature">
+    <p class="section-intro">Σύντομο επαναληπτικό quiz για όλη την ενότητα, με άμεση ανατροφοδότηση και χωρίς συλλογή προσωπικών στοιχείων.</p>
+    <a class="card quiz-feature" href={`${base}taxeis/g/ypologistis/quiz/`}>
       <div class="icon">🏁</div>
       <h3>Quiz: Γνωρίζω τον υπολογιστή</h3>
       <p>10 σύντομες ερωτήσεις με άμεση ανατροφοδότηση.</p>
-      <div class="tag-row"><span class="tag">10 ερωτήσεις</span><span class="tag">5–8΄</span></div>
-    </div>
+      <div class="tag-row"><span class="tag">10 ερωτήσεις</span><span class="tag">5–8΄</span><span class="tag">Ξεκίνα →</span></div>
+    </a>
   </section>
 
   <section class="section">
