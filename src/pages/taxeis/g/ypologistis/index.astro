@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ActivityCard from '../../../../components/ActivityCard.astro';
+const base = import.meta.env.BASE_URL;
+const activities = [
+  {number:'1',title:'Τι είναι ένας υπολογιστής;',description:'Καταλαβαίνω τι κάνει ένας υπολογιστής και ξεχωρίζω δεδομένα και πληροφορίες.',duration:'20΄',type:'Μάθημα + mini task',icon:'💻',href:`${base}taxeis/g/ypologistis/ti-einai-ypologistis/`},
+  {number:'2',title:'Υλικό και λογισμικό',description:'Ξεχωρίζω ό,τι μπορώ να αγγίξω από τα προγράμματα που χρησιμοποιώ.',duration:'25΄',type:'Ταξινόμηση',icon:'🧠',href:'#'},
+  {number:'3',title:'Περιφερειακές συσκευές',description:'Αναγνωρίζω συσκευές εισόδου, εξόδου και συσκευές που κάνουν και τα δύο.',duration:'25΄',type:'Interactive',icon:'⌨️',href:'#'},
+  {number:'4',title:'Πού αποθηκεύονται τα δεδομένα;',description:'Γνωρίζω βασικά αποθηκευτικά μέσα και συζητώ πού φυλάσσονται τα αρχεία μας.',duration:'20΄',type:'Explore',icon:'💾',href:'#'},
+  {number:'5',title:'Χρησιμοποιώ σωστά τον υπολογιστή',description:'Μαθαίνω βασικούς κανόνες εργονομίας και υπεύθυνης χρήσης στο εργαστήριο.',duration:'20΄',type:'Παρατήρηση + εφαρμογή',icon:'🪑',href:'#'}
+];
+---
+<BaseLayout title="Γνωρίζω τον υπολογιστή | Γ΄ Δημοτικού">
+  <section class="hero compact-hero">
+    <div class="eyebrow">Γ΄ Δημοτικού · Ενότητα 1</div>
+    <h1>Γνωρίζω τον υπολογιστή</h1>
+    <p>Ανακαλύπτουμε από τι αποτελείται ένα υπολογιστικό σύστημα, πώς επικοινωνεί μαζί μας και πώς το χρησιμοποιούμε σωστά.</p>
+    <div class="tag-row hero-tags">
+      <span class="tag">5 βασικές δραστηριότητες</span>
+      <span class="tag">≈ 2 διδακτικές ώρες</span>
+      <span class="tag">Επίπεδο: εισαγωγικό</span>
+    </div>
+  </section>
+
+  <section class="section learning-goals">
+    <div class="activity-block">
+      <h2>🎯 Στο τέλος της ενότητας μπορώ να…</h2>
+      <ul>
+        <li>εξηγώ με απλά λόγια τι κάνει ένας υπολογιστής,</li>
+        <li>ξεχωρίζω υλικό και λογισμικό,</li>
+        <li>αναγνωρίζω βασικές περιφερειακές συσκευές,</li>
+        <li>διακρίνω συσκευές εισόδου και εξόδου,</li>
+        <li>αναφέρω βασικά αποθηκευτικά μέσα,</li>
+        <li>χρησιμοποιώ τον υπολογιστή με σωστή στάση και ασφάλεια.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Η μαθησιακή διαδρομή</h2>
+    <p class="section-intro">Οι δραστηριότητες γίνονται με τη σειρά. Κάθε μία προσθέτει μία νέα ιδέα και καταλήγει σε μικρό έλεγχο κατανόησης ή προϊόν.</p>
+    <div class="grid">
+      {activities.map((activity) => <ActivityCard {...activity} />)}
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <h2>✅ Έλεγξε τι έμαθες</h2>
+    <p class="section-intro">Σύντομο επαναληπτικό quiz για όλη την ενότητα. Θα ενεργοποιηθεί όταν ολοκληρωθούν οι πέντε δραστηριότητες.</p>
+    <div class="card quiz-feature">
+      <div class="icon">🏁</div>
+      <h3>Quiz: Γνωρίζω τον υπολογιστή</h3>
+      <p>10 σύντομες ερωτήσεις με άμεση ανατροφοδότηση.</p>
+      <div class="tag-row"><span class="tag">10 ερωτήσεις</span><span class="tag">5–8΄</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>⭐ Περισσότερες δραστηριότητες</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🕵️</div><h3>Hardware Detective</h3><p>Βρες και ονόμασε όσες περισσότερες συσκευές μπορείς μέσα στο εργαστήριο.</p></div>
+      <div class="card"><div class="icon">🗺️</div><h3>Χάρτης του υπολογιστή</h3><p>Δημιούργησε εννοιολογικό χάρτη με υλικό, λογισμικό, είσοδο και έξοδο.</p></div>
+      <div class="card"><div class="icon">🎤</div><h3>Εξήγησέ το σε έναν φίλο</h3><p>Παρουσίασε σε 60 δευτερόλεπτα τι χρειάζεται ένας υπολογιστής για να λειτουργήσει.</p></div>
+    </div>
+  </section>
+</BaseLayout>
