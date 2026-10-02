@@ -1,0 +1,13 @@
+---
+const { number, title, description, duration = '20–25΄', type = 'Δραστηριότητα', href = '#', icon = '🧩' } = Astro.props;
+---
+<a class="card activity-card" href={href}>
+  <div class="activity-number">{number}</div>
+  <div class="icon">{icon}</div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <div class="tag-row">
+    <span class="tag">{duration}</span>
+    <span class="tag">{type}</span>
+  </div>
+</a>
