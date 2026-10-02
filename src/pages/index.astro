@@ -2,51 +2,93 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 const grades = [
-  ['Α΄','Πρώτα βήματα στον υπολογιστή',`${base}taxeis/`],
-  ['Β΄','Δημιουργώ και ακολουθώ οδηγίες',`${base}taxeis/`],
-  ['Γ΄','Οργανώνω, γράφω και προγραμματίζω',`${base}taxeis/g/`],
-  ['Δ΄','Εμβαθύνω σε εργαλεία και αλγορίθμους',`${base}taxeis/`],
-  ['Ε΄','Δημιουργώ ψηφιακά και σκέφτομαι υπολογιστικά',`${base}taxeis/`],
-  ['ΣΤ΄','Συνθέτω, προγραμματίζω και αξιολογώ ψηφιακά',`${base}taxeis/`]
+  ['Α΄','Πρώτα βήματα','🖱️','Μαθαίνω να χειρίζομαι τον υπολογιστή.',`${base}taxeis/`,'grade-a'],
+  ['Β΄','Δημιουργώ','🎨','Ζωγραφίζω, γράφω και ακολουθώ οδηγίες.',`${base}taxeis/`,'grade-b'],
+  ['Γ΄','Εξερευνώ','💻','Οργανώνω, γράφω και προγραμματίζω.',`${base}taxeis/g/`,'grade-c'],
+  ['Δ΄','Προχωρώ','🧩','Χρησιμοποιώ εργαλεία και αλγορίθμους.',`${base}taxeis/`,'grade-d'],
+  ['Ε΄','Σχεδιάζω','🤖','Δημιουργώ ψηφιακά και προγραμματίζω.',`${base}taxeis/`,'grade-e'],
+  ['ΣΤ΄','Συνθέτω','✨','Ερευνώ, δημιουργώ και αξιολογώ ψηφιακά.',`${base}taxeis/`,'grade-st']
 ];
 const topics = [
-  ['💻','Υπολογιστής & συσκευές'],['⌨️','Πληκτρολόγηση'],['🎨','Ψηφιακή δημιουργία'],
-  ['🌐','Διαδίκτυο'],['🛡️','Ψηφιακή ασφάλεια'],['🧠','Υπολογιστική σκέψη'],
-  ['🧩','Προγραμματισμός'],['🤖','Ρομποτική'],['✨','Τεχνητή Νοημοσύνη']
+  ['💻','Υπολογιστής','Γνώρισε συσκευές και ψηφιακά συστήματα','topic-blue'],
+  ['⌨️','Πληκτρολόγηση','Γράψε γρήγορα και σωστά','topic-yellow'],
+  ['🎨','Ψηφιακή δημιουργία','Εικόνα, ήχος και δημιουργικές εργασίες','topic-pink'],
+  ['🌐','Διαδίκτυο','Αναζήτηση, επικοινωνία και πληροφορία','topic-cyan'],
+  ['🛡️','Ψηφιακή ασφάλεια','Κινούμαι υπεύθυνα και με ασφάλεια','topic-green'],
+  ['🧠','Υπολογιστική σκέψη','Λύνω προβλήματα βήμα-βήμα','topic-purple'],
+  ['🧩','Προγραμματισμός','Δίνω εντολές και δημιουργώ projects','topic-orange'],
+  ['🤖','Ρομποτική','Συνδέω κώδικα με τον πραγματικό κόσμο','topic-red'],
+  ['✨','Τεχνητή Νοημοσύνη','Κατανοώ και χρησιμοποιώ υπεύθυνα την AI','topic-indigo']
 ];
 ---
 <BaseLayout>
-  <section class="hero">
-    <div class="eyebrow">ΤΠΕ στο Δημοτικό</div>
-    <h1>Μαθαίνω τεχνολογία μέσα από ψηφιακές διαδρομές.</h1>
-    <p>Ένα οργανωμένο περιβάλλον για δραστηριότητες, προγραμματισμό, ψηφιακή δημιουργία, ασφάλεια στο Διαδίκτυο, quizzes και projects από την Α΄ έως τη ΣΤ΄ Δημοτικού.</p>
+  <section class="home-hero">
+    <div class="hero-copy">
+      <div class="eyebrow hero-badge">ΤΠΕ στο Δημοτικό</div>
+      <h1>Μαθαίνω.<br/><span>Δημιουργώ.</span><br/>Προγραμματίζω.</h1>
+      <p>Οι Ψηφιακές Διαδρομές είναι ένας φιλικός χώρος μάθησης για παιδιά Δημοτικού, με δραστηριότητες, παιχνίδια, προγραμματισμό και δημιουργικά projects.</p>
+      <div class="hero-actions">
+        <a class="button-primary button-large" href="#grades">🚀 Ξεκίνα τη διαδρομή σου</a>
+        <a class="button-ghost button-large" href={`${base}quizzes/`}>🎯 Παίξε ένα quiz</a>
+      </div>
+      <div class="hero-mini-stats">
+        <span>🎒 Α΄–ΣΤ΄ Δημοτικού</span><span>🧩 Μικρά βήματα</span><span>🏆 Μαθαίνω κάνοντας</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="visual-card visual-code"><span>🧩</span><b>repeat 4</b><small>move 10 steps</small></div>
+      <div class="visual-card visual-robot"><span>🤖</span><b>Hello!</b></div>
+      <div class="visual-card visual-shield"><span>🛡️</span><b>Safe online</b></div>
+      <div class="visual-computer">
+        <div class="computer-screen">
+          <div class="screen-dots"><i></i><i></i><i></i></div>
+          <div class="screen-content"><span class="screen-star">★</span><div><b>Ψηφιακές</b><small>Διαδρομές</small></div></div>
+          <div class="screen-blocks"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="computer-stand"></div>
+        <div class="computer-base"></div>
+      </div>
+      <div class="visual-spark spark-1">✦</div><div class="visual-spark spark-2">✧</div><div class="visual-spark spark-3">●</div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Διάλεξε την τάξη σου</h2>
-    <p class="section-intro">Κάθε τάξη ακολουθεί τη δική της μαθησιακή πορεία, με σταδιακή αύξηση δυσκολίας και σύνδεση με προηγούμενες γνώσεις.</p>
-    <div class="grid">
-      {grades.map(([grade,desc,href]) => (
-        <a class="card grade-card" href={href}>
-          <div class="grade-letter">{grade}</div>
-          <h3>Δημοτικού</h3>
-          <p>{desc}</p>
+  <section class="section grades-section" id="grades">
+    <div class="section-heading">
+      <div><span class="section-kicker">🎒 Η διαδρομή σου</span><h2>Διάλεξε την τάξη σου</h2></div>
+      <p>Κάθε τάξη έχει το δικό της μονοπάτι. Προχωράς σταδιακά, δημιουργείς προϊόντα και ξεκλειδώνεις νέες δεξιότητες.</p>
+    </div>
+    <div class="grade-grid">
+      {grades.map(([grade,title,icon,desc,href,className]) => (
+        <a class={`grade-tile ${className}`} href={href}>
+          <div class="grade-tile-top"><span class="grade-bubble">{grade}</span><span class="grade-icon">{icon}</span></div>
+          <div class="grade-tile-copy"><small>{title}</small><h3>{grade} Δημοτικού</h3><p>{desc}</p></div>
+          <span class="tile-arrow">→</span>
         </a>
       ))}
     </div>
   </section>
 
-  <section class="section">
-    <h2>Εξερεύνησε ανά θεματική</h2>
-    <p class="section-intro">Ο ίδιος μαθησιακός χάρτης μπορεί να εξερευνηθεί και οριζόντια, ανά γνωστικό αντικείμενο.</p>
-    <div class="grid">
-      {topics.map(([icon,title]) => (
-        <a class="card" href={`${base}thematikes/`}>
-          <div class="icon">{icon}</div>
-          <h3>{title}</h3>
-          <p>Δραστηριότητες από διαφορετικές τάξεις με κοινό γνωστικό στόχο.</p>
+  <section class="section topic-section">
+    <div class="section-heading">
+      <div><span class="section-kicker">🧭 Εξερεύνηση</span><h2>Τι θέλεις να κάνεις σήμερα;</h2></div>
+      <p>Μπορείς να μπεις στο μάθημα και από τη θεματική που σε ενδιαφέρει περισσότερο.</p>
+    </div>
+    <div class="topic-grid">
+      {topics.map(([icon,title,desc,className]) => (
+        <a class={`topic-tile ${className}`} href={`${base}thematikes/`}>
+          <span class="topic-icon">{icon}</span>
+          <div><h3>{title}</h3><p>{desc}</p></div>
+          <span class="topic-arrow">↗</span>
         </a>
       ))}
     </div>
+  </section>
+
+  <section class="section feature-strip">
+    <div class="feature-panel quiz-panel"><div class="feature-emoji">🎯</div><div><span>Γρήγορη πρόκληση</span><h2>Quiz Bank</h2><p>Σύντομες ερωτήσεις με άμεση ανατροφοδότηση.</p><a href={`${base}quizzes/`}>Δοκίμασε ένα quiz →</a></div></div>
+    <div class="feature-panel project-panel"><div class="feature-emoji">🚀</div><div><span>Δημιουργώ κάτι δικό μου</span><h2>Projects</h2><p>Μικρές αποστολές που συνδυάζουν γνώσεις και δημιουργικότητα.</p><a href={`${base}taxeis/g/`}>Δες τις διαδρομές →</a></div></div>
   </section>
 </BaseLayout>
