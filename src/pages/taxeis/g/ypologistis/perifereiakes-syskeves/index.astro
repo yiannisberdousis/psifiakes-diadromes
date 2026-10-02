@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Περιφερειακές συσκευές | Γ΄ Δημοτικού">
+  <article class="activity-shell">
+    <div class="eyebrow">Γ΄ Δημοτικού · Ενότητα 1 · Δραστηριότητα 3</div>
+    <h1>Περιφερειακές συσκευές</h1>
+    <div class="activity-meta"><span class="tag">⏱️ 25΄</span><span class="tag">⌨️ Είσοδος / έξοδος</span><span class="tag">⭐ Εύκολο</span></div>
+
+    <section class="activity-block"><h2>🎯 Τι θα μάθω</h2><p>Θα αναγνωρίζω βασικές περιφερειακές συσκευές και θα τις ταξινομώ ως συσκευές <strong>εισόδου</strong>, <strong>εξόδου</strong> ή <strong>εισόδου και εξόδου</strong>.</p></section>
+
+    <section class="activity-block"><h2>📖 Μαθαίνω</h2><p>Με τις συσκευές <strong>εισόδου</strong> στέλνουμε δεδομένα ή εντολές στον υπολογιστή. Με τις συσκευές <strong>εξόδου</strong> ο υπολογιστής μας παρουσιάζει αποτελέσματα. Ορισμένες συσκευές μπορούν να κάνουν και τα δύο.</p><div class="process-flow"><div><strong>Είσοδος</strong><span>πληκτρολόγιο, ποντίκι, μικρόφωνο</span></div><div class="flow-arrow">↔</div><div><strong>Υπολογιστής</strong><span>επεξεργάζεται δεδομένα</span></div><div class="flow-arrow">↔</div><div><strong>Έξοδος</strong><span>οθόνη, ηχεία, εκτυπωτής</span></div></div></section>
+
+    <section class="activity-block"><h2>🚀 Δραστηριότητα: Βρες τη σωστή κατηγορία</h2><div class="choice-grid"><div class="choice-item">⌨️ Πληκτρολόγιο</div><div class="choice-item">🖱️ Ποντίκι</div><div class="choice-item">🎤 Μικρόφωνο</div><div class="choice-item">🖥️ Οθόνη</div><div class="choice-item">🔊 Ηχεία</div><div class="choice-item">🖨️ Εκτυπωτής</div><div class="choice-item">📱 Οθόνη αφής</div><div class="choice-item">🎧 Headset</div></div><p>Χώρισέ τα σε τρεις ομάδες: <strong>Είσοδος</strong>, <strong>Έξοδος</strong>, <strong>Και τα δύο</strong>. Για την οθόνη αφής και το headset εξήγησε τι δεδομένα εισάγονται και τι αποτέλεσμα εξάγεται.</p></section>
+
+    <section class="activity-block"><h2>🔎 Παρατήρηση στο εργαστήριο</h2><p>Εντόπισε τουλάχιστον πέντε περιφερειακές συσκευές γύρω σου. Για καθεμία σημείωσε το όνομά της και τον ρόλο της.</p></section>
+
+    <section class="activity-block check-block"><h2>✅ Έλεγξε τον εαυτό σου</h2><details><summary>Το μικρόφωνο είναι είσοδος ή έξοδος;</summary><p>Είσοδος, γιατί στέλνει ήχο στον υπολογιστή.</p></details><details><summary>Ο εκτυπωτής;</summary><p>Έξοδος, γιατί ο υπολογιστής στέλνει προς αυτόν το αποτέλεσμα για εκτύπωση.</p></details><details><summary>Γιατί μια οθόνη αφής μπορεί να είναι και τα δύο;</summary><p>Εμφανίζει πληροφορίες και ταυτόχρονα δέχεται εντολές μέσω αφής.</p></details></section>
+
+    <nav class="activity-navigation"><a class="button-secondary" href={`${base}taxeis/g/ypologistis/yliko-logismiko/`}>← Προηγούμενο</a><a class="button-primary" href={`${base}taxeis/g/ypologistis/apothikefsi-dedomenon/`}>Επόμενο: Αποθήκευση δεδομένων →</a></nav>
+  </article>
+</BaseLayout>
