@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Τι είναι ένας υπολογιστής; | Γ΄ Δημοτικού">
+  <article class="activity-shell">
+    <div class="eyebrow">Γ΄ Δημοτικού · Ενότητα 1 · Δραστηριότητα 1</div>
+    <h1>Τι είναι ένας υπολογιστής;</h1>
+    <div class="activity-meta">
+      <span class="tag">⏱️ 20΄</span>
+      <span class="tag">💻 Υπολογιστής</span>
+      <span class="tag">⭐ Εύκολο</span>
+    </div>
+
+    <section class="activity-block">
+      <h2>🎯 Τι θα μάθω</h2>
+      <p>Θα καταλάβω ότι ο υπολογιστής δέχεται δεδομένα, τα επεξεργάζεται και μας δίνει αποτελέσματα που μπορούμε να χρησιμοποιήσουμε.</p>
+    </section>
+
+    <section class="activity-block">
+      <h2>💡 Σκέψου πρώτα</h2>
+      <p>Πού συναντάς υπολογιστές στην καθημερινή σου ζωή; Μόνο ο επιτραπέζιος υπολογιστής είναι υπολογιστής ή και ένα tablet, ένα κινητό ή μια έξυπνη συσκευή;</p>
+    </section>
+
+    <section class="activity-block">
+      <h2>📖 Μαθαίνω</h2>
+      <p>Ένας υπολογιστής είναι μια ηλεκτρονική συσκευή που μπορεί να δέχεται δεδομένα, να ακολουθεί οδηγίες για να τα επεξεργάζεται και να παράγει ένα αποτέλεσμα.</p>
+      <div class="process-flow">
+        <div><strong>1. Είσοδος</strong><span>Δίνω δεδομένα ή εντολές</span></div>
+        <div class="flow-arrow">→</div>
+        <div><strong>2. Επεξεργασία</strong><span>Ο υπολογιστής εκτελεί οδηγίες</span></div>
+        <div class="flow-arrow">→</div>
+        <div><strong>3. Έξοδος</strong><span>Παίρνω αποτέλεσμα ή πληροφορία</span></div>
+      </div>
+      <p>Παράδειγμα: γράφω δύο αριθμούς σε μια εφαρμογή αριθμομηχανής, ο υπολογιστής εκτελεί την πράξη και εμφανίζει το αποτέλεσμα.</p>
+    </section>
+
+    <section class="activity-block">
+      <h2>🚀 Δραστηριότητα: Υπολογιστής ή όχι;</h2>
+      <p>Δούλεψε με έναν συμμαθητή. Για καθεμία από τις παρακάτω συσκευές αποφασίστε αν μπορεί να θεωρηθεί υπολογιστικό σύστημα και εξηγήστε γιατί:</p>
+      <div class="choice-grid">
+        <div class="choice-item">💻 Laptop</div>
+        <div class="choice-item">📱 Smartphone</div>
+        <div class="choice-item">⌚ Smartwatch</div>
+        <div class="choice-item">🧮 Απλή αριθμομηχανή</div>
+        <div class="choice-item">🖨️ Εκτυπωτής</div>
+        <div class="choice-item">🎮 Κονσόλα παιχνιδιών</div>
+      </div>
+      <p><strong>Κανόνας:</strong> μη μένεις μόνο στην εμφάνιση. Σκέψου αν η συσκευή δέχεται δεδομένα/εντολές, τα επεξεργάζεται και παράγει αποτέλεσμα.</p>
+    </section>
+
+    <section class="activity-block">
+      <h2>🧠 Mini challenge</h2>
+      <p>Διάλεξε μία καθημερινή χρήση υπολογιστή και περιέγραψε τα τρία βήματα:</p>
+      <ol>
+        <li>Τι δεδομένα ή εντολές δίνεις;</li>
+        <li>Τι επεξεργασία γίνεται;</li>
+        <li>Ποιο αποτέλεσμα παίρνεις;</li>
+      </ol>
+    </section>
+
+    <section class="activity-block check-block">
+      <h2>✅ Έλεγξε τον εαυτό σου</h2>
+      <details><summary>1. Τι κάνει ένας υπολογιστής;</summary><p>Δέχεται δεδομένα/εντολές, τα επεξεργάζεται και παράγει αποτελέσματα.</p></details>
+      <details><summary>2. Είναι ένα smartphone υπολογιστικό σύστημα;</summary><p>Ναι. Μπορεί να δέχεται δεδομένα και εντολές, να τα επεξεργάζεται και να εμφανίζει ή να μεταδίδει αποτελέσματα.</p></details>
+      <details><summary>3. Ποια είναι τα τρία βασικά στάδια που είδαμε;</summary><p>Είσοδος → Επεξεργασία → Έξοδος.</p></details>
+    </section>
+
+    <nav class="activity-navigation">
+      <a class="button-secondary" href={`${base}taxeis/g/ypologistis/`}>← Επιστροφή στην Ενότητα 1</a>
+      <span class="button-disabled">Επόμενο: Υλικό και λογισμικό →</span>
+    </nav>
+  </article>
+</BaseLayout>
