@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Υλικό και λογισμικό | Γ΄ Δημοτικού">
+  <article class="activity-shell">
+    <div class="eyebrow">Γ΄ Δημοτικού · Ενότητα 1 · Δραστηριότητα 2</div>
+    <h1>Υλικό και λογισμικό</h1>
+    <div class="activity-meta"><span class="tag">⏱️ 25΄</span><span class="tag">🧠 Ταξινόμηση</span><span class="tag">⭐ Εύκολο</span></div>
+
+    <section class="activity-block"><h2>🎯 Τι θα μάθω</h2><p>Θα ξεχωρίζω το <strong>υλικό (hardware)</strong> από το <strong>λογισμικό (software)</strong> και θα εξηγώ γιατί ένας υπολογιστής χρειάζεται και τα δύο.</p></section>
+
+    <section class="activity-block"><h2>💡 Σκέψου πρώτα</h2><p>Μπορεί ένας υπολογιστής να λειτουργήσει μόνο με οθόνη, πληκτρολόγιο και ποντίκι χωρίς κανένα πρόγραμμα; Και αντίστροφα, μπορεί ένα πρόγραμμα να λειτουργήσει χωρίς κάποια συσκευή;</p></section>
+
+    <section class="activity-block"><h2>📖 Μαθαίνω</h2><p><strong>Υλικό</strong> είναι όλα τα φυσικά μέρη του υπολογιστή που μπορούμε να δούμε ή να αγγίξουμε: οθόνη, πληκτρολόγιο, ποντίκι, επεξεργαστής, μνήμη, εκτυπωτής.</p><p><strong>Λογισμικό</strong> είναι τα προγράμματα και οι εφαρμογές που δίνουν οδηγίες στον υπολογιστή: λειτουργικό σύστημα, πρόγραμμα ζωγραφικής, browser, παιχνίδι, εφαρμογή παρουσιάσεων.</p><p>Το υλικό χωρίς λογισμικό δεν ξέρει τι να κάνει· το λογισμικό χωρίς υλικό δεν έχει πού να εκτελεστεί.</p></section>
+
+    <section class="activity-block"><h2>🚀 Δραστηριότητα: Χώρισέ τα σε δύο ομάδες</h2><div class="choice-grid"><div class="choice-item">🖥️ Οθόνη</div><div class="choice-item">📝 Writer / Word</div><div class="choice-item">⌨️ Πληκτρολόγιο</div><div class="choice-item">🌐 Browser</div><div class="choice-item">🖨️ Εκτυπωτής</div><div class="choice-item">🎨 Tux Paint</div><div class="choice-item">🖱️ Ποντίκι</div><div class="choice-item">🪟 Λειτουργικό σύστημα</div></div><p>Γράψε δύο τίτλους στο τετράδιό σου: <strong>Υλικό</strong> και <strong>Λογισμικό</strong>. Τοποθέτησε κάθε στοιχείο στη σωστή ομάδα και αιτιολόγησε δύο επιλογές σου.</p></section>
+
+    <section class="activity-block"><h2>🧠 Mini challenge</h2><p>Διάλεξε μία εφαρμογή που χρησιμοποιείς στο εργαστήριο και γράψε δύο κομμάτια υλικού που χρειάζεσαι για να τη χρησιμοποιήσεις.</p></section>
+
+    <section class="activity-block check-block"><h2>✅ Έλεγξε τον εαυτό σου</h2><details><summary>Το πληκτρολόγιο είναι hardware ή software;</summary><p>Hardware, επειδή είναι φυσική συσκευή.</p></details><details><summary>Ένα πρόγραμμα ζωγραφικής είναι hardware ή software;</summary><p>Software, επειδή είναι πρόγραμμα που εκτελείται στον υπολογιστή.</p></details><details><summary>Γιατί χρειαζόμαστε και τα δύο;</summary><p>Το λογισμικό δίνει οδηγίες και το υλικό τις εκτελεί.</p></details></section>
+
+    <nav class="activity-navigation"><a class="button-secondary" href={`${base}taxeis/g/ypologistis/ti-einai-ypologistis/`}>← Προηγούμενο</a><a class="button-primary" href={`${base}taxeis/g/ypologistis/perifereiakes-syskeves/`}>Επόμενο: Περιφερειακές συσκευές →</a></nav>
+  </article>
+</BaseLayout>
