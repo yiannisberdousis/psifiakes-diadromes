@@ -51,8 +51,23 @@ h1{font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.3em 0 .25em;max-wid
 details{background:#f8fafc;border:1px solid #e5eaf1;border-radius:12px;padding:14px 16px;margin-top:10px}
 summary{cursor:pointer;font-weight:750}
 .activity-navigation{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:30px}
-.button-secondary,.button-disabled{display:inline-flex;padding:12px 16px;border-radius:12px;font-weight:750}
+.button-primary,.button-secondary,.button-disabled{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;font-weight:750;border:0;font:inherit;cursor:pointer}
+.button-primary{background:#1f5fbf;color:white}
+.button-primary:hover{background:#194f9f}
 .button-secondary{background:#eef4ff;color:#24529a}
-.button-disabled{background:#edf0f4;color:#8a94a6}
+.button-disabled{background:#edf0f4;color:#8a94a6;cursor:default}
+.quiz-form{display:grid;gap:16px}
+.quiz-question{background:#fff;border:1px solid #e5eaf1;border-radius:16px;padding:20px;margin:0}
+.quiz-question legend{font-weight:800;padding:0 6px}
+.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;margin-top:8px;border:1px solid #e8edf4;border-radius:10px;cursor:pointer;background:#fbfcfe}
+.quiz-option:hover{border-color:#b9c8df;background:#f6f9ff}
+.quiz-option input{margin-top:.3em}
+.quiz-feedback{margin:12px 0 0;font-weight:700}
+.quiz-question.is-correct{border-color:#7bc59a;background:#f5fff8}
+.quiz-question.is-correct .quiz-feedback{color:#26734a}
+.quiz-question.is-wrong{border-color:#e4a1a1;background:#fff8f8}
+.quiz-question.is-wrong .quiz-feedback{color:#9b3333}
+.quiz-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.quiz-result{border-width:2px;border-color:#b8c9e5}
 footer{padding:32px clamp(20px,7vw,100px);border-top:1px solid #e5eaf1;color:#667085;background:white}
 @media (max-width:720px){.site-header{align-items:flex-start;flex-direction:column}.site-header nav{gap:14px;flex-wrap:wrap}.hero{padding-top:48px}.process-flow{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg);text-align:center}}
