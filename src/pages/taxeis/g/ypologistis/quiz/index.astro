@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const questions = [
+  {q:'Ποια σειρά περιγράφει καλύτερα τι κάνει ένας υπολογιστής;', options:['Είσοδος → Επεξεργασία → Έξοδος','Έξοδος → Είσοδος → Ύπνος','Αποθήκευση → Εκτύπωση → Σβήσιμο'], answer:0},
+  {q:'Ποιο από τα παρακάτω είναι υλικό (hardware);', options:['Browser','Πληκτρολόγιο','Πρόγραμμα ζωγραφικής'], answer:1},
+  {q:'Ποιο από τα παρακάτω είναι λογισμικό (software);', options:['Οθόνη','Εκτυπωτής','Λειτουργικό σύστημα'], answer:2},
+  {q:'Ποια συσκευή είναι κυρίως συσκευή εισόδου;', options:['Μικρόφωνο','Ηχεία','Εκτυπωτής'], answer:0},
+  {q:'Ποια συσκευή είναι κυρίως συσκευή εξόδου;', options:['Ποντίκι','Πληκτρολόγιο','Οθόνη'], answer:2},
+  {q:'Γιατί μια οθόνη αφής μπορεί να είναι είσοδος και έξοδος;', options:['Επειδή έχει μπαταρία','Επειδή εμφανίζει πληροφορίες και δέχεται αγγίγματα','Επειδή συνδέεται στο Internet'], answer:1},
+  {q:'Ποιο από τα παρακάτω είναι αποθηκευτικό μέσο;', options:['USB flash drive','Ηχεία','Webcam'], answer:0},
+  {q:'Τι σημαίνει cloud storage;', options:['Αποθήκευση μόνο σε USB','Αποθήκευση σε απομακρυσμένα συστήματα μέσω δικτύου','Διαγραφή αρχείων'], answer:1},
+  {q:'Ποια είναι σωστή συνήθεια στο εργαστήριο;', options:['Ποτό δίπλα στο πληκτρολόγιο','Χτυπάω δυνατά τα πλήκτρα','Κάθομαι σωστά και κρατώ τον χώρο καθαρό'], answer:2},
+  {q:'Τι κάνω πριν συνδέσω άγνωστη συσκευή στον υπολογιστή του σχολείου;', options:['Τη συνδέω αμέσως','Ζητώ οδηγίες από τον/την εκπαιδευτικό','Κλείνω την οθόνη'], answer:1}
+];
+---
+<BaseLayout title="Quiz: Γνωρίζω τον υπολογιστή | Γ΄ Δημοτικού">
+  <article class="activity-shell">
+    <div class="eyebrow">Γ΄ Δημοτικού · Ενότητα 1 · Τελικός έλεγχος</div>
+    <h1>Quiz: Γνωρίζω τον υπολογιστή</h1>
+    <div class="activity-meta"><span class="tag">10 ερωτήσεις</span><span class="tag">⏱️ 5–8΄</span><span class="tag">✅ Άμεση ανατροφοδότηση</span></div>
+
+    <section class="activity-block">
+      <h2>🏁 Οδηγίες</h2>
+      <p>Διάλεξε μία απάντηση σε κάθε ερώτηση και πάτησε <strong>Έλεγχος απαντήσεων</strong>. Το αποτέλεσμα δεν αποθηκεύεται και δεν ζητάμε όνομα ή άλλα προσωπικά στοιχεία.</p>
+    </section>
+
+    <form id="quiz-form" class="quiz-form">
+      {questions.map((item, i) => (
+        <fieldset class="quiz-question" data-answer={item.answer}>
+          <legend>{i + 1}. {item.q}</legend>
+          {item.options.map((option, j) => (
+            <label class="quiz-option">
+              <input type="radio" name={`q${i}`} value={j} />
+              <span>{option}</span>
+            </label>
+          ))}
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </fieldset>
+      ))}
+      <div class="quiz-actions">
+        <button class="button-primary quiz-submit" type="submit">Έλεγχος απαντήσεων</button>
+        <button class="button-secondary" type="reset">Ξεκίνα ξανά</button>
+      </div>
+    </form>
+
+    <section id="quiz-result" class="activity-block quiz-result" hidden aria-live="polite"></section>
+
+    <nav class="activity-navigation"><a class="button-secondary" href={`${base}taxeis/g/ypologistis/sosti-xrisi/`}>← Προηγούμενο</a><a class="button-primary" href={`${base}taxeis/g/ypologistis/`}>Επιστροφή στην Ενότητα 1</a></nav>
+  </article>
+
+  <script define:vars={{questions}}>
+    const form = document.querySelector('#quiz-form');
+    const result = document.querySelector('#quiz-result');
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      let score = 0;
+      document.querySelectorAll('.quiz-question').forEach((fieldset, index) => {
+        const selected = fieldset.querySelector('input:checked');
+        const feedback = fieldset.querySelector('.quiz-feedback');
+        const correct = Number(fieldset.dataset.answer);
+        if (!selected) {
+          feedback.textContent = 'Δεν απάντησες ακόμη σε αυτή την ερώτηση.';
+          fieldset.classList.remove('is-correct','is-wrong');
+          return;
+        }
+        if (Number(selected.value) === correct) {
+          score++;
+          feedback.textContent = 'Σωστά!';
+          fieldset.classList.add('is-correct');
+          fieldset.classList.remove('is-wrong');
+        } else {
+          feedback.textContent = `Δοκίμασε ξανά. Η σωστή απάντηση είναι: ${questions[index].options[correct]}`;
+          fieldset.classList.add('is-wrong');
+          fieldset.classList.remove('is-correct');
+        }
+      });
+      const message = score >= 9 ? 'Εξαιρετικά! Έχεις κατακτήσει την ενότητα.' : score >= 7 ? 'Πολύ καλά! Δες ξανά ό,τι έχασες.' : 'Καλή προσπάθεια. Επανέλαβε τις δραστηριότητες που σε δυσκόλεψαν και ξαναδοκίμασε.';
+      result.hidden = false;
+      result.innerHTML = `<h2>Αποτέλεσμα: ${score}/10</h2><p>${message}</p>`;
+      result.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+    form?.addEventListener('reset', () => {
+      document.querySelectorAll('.quiz-question').forEach((fieldset) => {
+        fieldset.classList.remove('is-correct','is-wrong');
+        const feedback = fieldset.querySelector('.quiz-feedback');
+        if (feedback) feedback.textContent = '';
+      });
+      if (result) result.hidden = true;
+    });
+  </script>
+</BaseLayout>
