@@ -68,7 +68,7 @@ const groups = [
 
 <BaseLayout title="Χριστουγεννιάτικα παιχνίδια | Ψηφιακές Διαδρομές" description="Χριστουγεννιάτικα παιχνίδια και δημιουργικές δραστηριότητες για το Δημοτικό.">
   <header class="festive">
-    <h1>Χριστουγεννιάτικα παιχνίδια</h1>
+    <h1 id="christmas-heading">Χριστουγεννιάτικα παιχνίδια</h1>
     <p>Παίξε, στόλισε ένα δέντρο ή φτιάξε τη δική σου γιορτινή κάρτα.</p>
     <nav aria-label="Κατηγορίες δραστηριοτήτων">
       {groups.map(({ title }, index) => <a href={`#group-${index + 1}`}>{title}</a>)}
@@ -131,6 +131,13 @@ const groups = [
 </script>
 
 <style>
+  :global(body:has(#christmas-heading)) {
+    font-family: Arial, "Liberation Sans", sans-serif;
+  }
+  .festive h1, .section h2 {
+    letter-spacing: normal;
+    line-height: 1.2;
+  }
   .festive { margin-top: 1.5rem; padding: clamp(1.25rem, 5vw, 3rem); border-radius: 1.5rem; background: #123f36; color: #fff8e6; }
   .festive h1 { color: inherit; margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); }
   .festive nav, .actions { display: flex; flex-wrap: wrap; gap: .6rem; }
